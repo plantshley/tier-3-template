@@ -1,0 +1,384 @@
+/* ========================================
+   MENTAL MODEL TEMPLATE - STYLES
+   A cosmic theme for showcasing your work
+   ======================================== */
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   Edit these values to customize colors and fonts!
+   ======================================== */
+
+/* ----------------------------------------
+   DARK THEME (Moonlight) - Default
+   ---------------------------------------- */
+:root,
+[data-theme="dark"] {
+    /* Background Colors */
+    --bg-primary: #0a0a1a;           /* Main dark background */
+    --bg-secondary: #12122a;         /* Card/section backgrounds */
+
+    /* Text Colors */
+    --text-primary: #e8e8ff;         /* Main text color */
+    --text-secondary: #a8a8d8;       /* Muted/secondary text */
+
+    /* Accent Colors - used for glows and highlights */
+    --accent-pink: #ff6b9d;
+    --accent-purple: #a855f7;
+    --accent-cyan: #06b6d4;
+
+    /* Typography */
+    --font-display: 'Press Start 2P', cursive;
+    --font-body: 'JetBrains Mono', monospace;
+
+    /* Spacing */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Border Radius */
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    /* Theme-specific */
+    --shadow-glow: rgba(168, 85, 247, 0.4);
+    --shadow-glow-secondary: rgba(255, 107, 157, 0.3);
+    --border-accent: rgba(168, 85, 247, 0.3);
+}
+
+/* ----------------------------------------
+   LIGHT THEME (Sunshine)
+   ---------------------------------------- */
+[data-theme="light"] {
+    /* Background Colors */
+    --bg-primary: #f0f4ff;           /* Light blue-white background */
+    --bg-secondary: #e0e8ff;         /* Card/section backgrounds */
+
+    /* Text Colors */
+    --text-primary: #1a1a3a;         /* Dark text for readability */
+    --text-secondary: #4a4a7a;       /* Muted/secondary text */
+
+    /* Accent Colors - slightly adjusted for light mode */
+    --accent-pink: #e05585;
+    --accent-purple: #8b45d6;
+    --accent-cyan: #0598b8;
+
+    /* Theme-specific */
+    --shadow-glow: rgba(139, 69, 214, 0.3);
+    --shadow-glow-secondary: rgba(224, 85, 133, 0.2);
+    --border-accent: rgba(139, 69, 214, 0.4);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================================
+   THEME TOGGLE BUTTON
+   Switch between moonlight and sunshine
+   ======================================== */
+
+.nav-controls {
+    position: fixed;
+    top: var(--space-md);
+    right: var(--space-md);
+    z-index: 100;
+}
+
+.theme-toggle {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-accent);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-glow);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px var(--shadow-glow);
+    border-color: var(--accent-purple);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Icon visibility based on theme */
+.theme-toggle .icon {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Dark theme: show moon, hide sun */
+[data-theme="dark"] .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="dark"] .sun-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+/* Light theme: show sun, hide moon */
+[data-theme="light"] .moon-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+[data-theme="light"] .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* ========================================
+   PARTICLE BACKGROUND
+   The animated stars behind your content
+   ======================================== */
+
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ========================================
+   MAIN CONTAINER
+   Centers and constrains content width
+   ======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   HERO SECTION
+   The title area at the top
+   ======================================== */
+
+.hero {
+    text-align: center;
+    padding: var(--space-xl) 0 var(--space-lg) 0;
+}
+
+/* Animated gradient title */
+.glowing-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    background: linear-gradient(
+        90deg,
+        #ff6b9d 0%,
+        #c44569 20%,
+        #a855f7 40%,
+        #6366f1 60%,
+        #06b6d4 80%,
+        #3b82f6 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 8s ease infinite;
+    line-height: 1.4;
+    margin-bottom: var(--space-md);
+}
+
+/* Title gradient animation */
+@keyframes gradientShift {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+/* ========================================
+   IMAGE SECTION
+   Your mental model display area
+   ======================================== */
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-lg) 0;
+    padding: var(--space-md);
+}
+
+/* The mental model image with glow effect */
+.mental-model-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 8px 40px var(--shadow-glow),
+        0 4px 20px var(--shadow-glow-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+/* Light theme adjustments for images */
+[data-theme="light"] .mental-model-image {
+    filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(0.9);
+}
+
+/* Hover effect for the image */
+.mental-model-image:hover {
+    transform: scale(1.02);
+    box-shadow:
+        0 12px 60px var(--shadow-glow),
+        0 6px 30px var(--shadow-glow-secondary);
+}
+
+/* ========================================
+   DESCRIPTION SECTION
+   Where you explain your thinking process
+   ======================================== */
+
+.description-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    border: 2px solid var(--border-accent);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.description-section p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+}
+
+.description-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+    text-align: center;
+    padding: var(--space-xl) 0 var(--space-lg) 0;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   Adjustments for smaller screens
+   ======================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--space-md);
+    }
+
+    .hero {
+        padding: var(--space-lg) 0 var(--space-md) 0;
+    }
+
+    .glowing-title {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    .description-section {
+        padding: var(--space-md);
+    }
+
+    .image-section {
+        padding: var(--space-sm);
+    }
+
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+    }
+
+    .nav-controls {
+        top: var(--space-sm);
+        right: var(--space-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .glowing-title {
+        font-size: 0.9rem;
+    }
+
+    .description-section p {
+        font-size: 0.9rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   OPTIONAL: ADDITIONAL STYLES
+   Uncomment or add your own styles below!
+   ======================================== */
+
+/*
+   Example: Add a subtle glow to the description section on hover
+
+   .description-section:hover {
+       border-color: rgba(168, 85, 247, 0.6);
+       box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+   }
+*/
+
+/*
+   Example: Different color scheme (warm sunset)
+
+   :root {
+       --bg-primary: #1a0a0a;
+       --bg-secondary: #2a1212;
+       --accent-pink: #ff6b6b;
+       --accent-purple: #f7a855;
+       --accent-cyan: #d406b6;
+   }
+*/

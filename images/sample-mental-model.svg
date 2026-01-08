@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <!-- Gradient background that works in both themes -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a3a;stop-opacity:0.95"/>
+      <stop offset="50%" style="stop-color:#2a2a4a;stop-opacity:0.95"/>
+      <stop offset="100%" style="stop-color:#3a3a5a;stop-opacity:0.95"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="purpleGlow">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feFlood flood-color="#a855f7" flood-opacity="0.5"/>
+      <feComposite in2="coloredBlur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="pinkGlow">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feFlood flood-color="#ff6b9d" flood-opacity="0.4"/>
+      <feComposite in2="coloredBlur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Semi-transparent background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+
+  <!-- Decorative stars with lighter colors -->
+  <circle cx="100" cy="100" r="2" fill="#ffffff" opacity="0.4"/>
+  <circle cx="200" cy="50" r="1.5" fill="#d8b4fe" opacity="0.6"/>
+  <circle cx="350" cy="120" r="1" fill="#fbb6ce" opacity="0.5"/>
+  <circle cx="500" cy="80" r="2" fill="#a5f3fc" opacity="0.4"/>
+  <circle cx="700" cy="60" r="1.5" fill="#ffffff" opacity="0.3"/>
+  <circle cx="850" cy="100" r="2" fill="#d8b4fe" opacity="0.5"/>
+  <circle cx="1000" cy="70" r="1" fill="#fbb6ce" opacity="0.6"/>
+  <circle cx="1100" cy="120" r="1.5" fill="#a5f3fc" opacity="0.4"/>
+  <circle cx="150" cy="700" r="2" fill="#ffffff" opacity="0.3"/>
+  <circle cx="300" cy="750" r="1.5" fill="#d8b4fe" opacity="0.5"/>
+  <circle cx="450" cy="720" r="1" fill="#fbb6ce" opacity="0.4"/>
+  <circle cx="750" cy="740" r="2" fill="#a5f3fc" opacity="0.6"/>
+  <circle cx="900" cy="700" r="1.5" fill="#ffffff" opacity="0.4"/>
+  <circle cx="1050" cy="730" r="2" fill="#d8b4fe" opacity="0.5"/>
+
+  <!-- Connection lines -->
+  <line x1="600" y1="250" x2="350" y2="400" stroke="#a855f7" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  <line x1="600" y1="250" x2="850" y2="400" stroke="#a855f7" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  <line x1="350" y1="400" x2="450" y2="550" stroke="#ff6b9d" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  <line x1="850" y1="400" x2="750" y2="550" stroke="#ff6b9d" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  <line x1="450" y1="550" x2="600" y2="650" stroke="#06b6d4" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  <line x1="750" y1="550" x2="600" y2="650" stroke="#06b6d4" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+
+  <!-- Central concept node -->
+  <circle cx="600" cy="250" r="60" fill="#2a2a4a" stroke="#a855f7" stroke-width="3" filter="url(#purpleGlow)"/>
+  <text x="600" y="255" font-family="'JetBrains Mono', monospace" font-size="14" fill="#e8e8ff" text-anchor="middle" font-weight="500">Main Concept</text>
+
+  <!-- Left branch node -->
+  <circle cx="350" cy="400" r="50" fill="#2a2a4a" stroke="#ff6b9d" stroke-width="2.5" filter="url(#pinkGlow)"/>
+  <text x="350" y="405" font-family="'JetBrains Mono', monospace" font-size="12" fill="#e8e8ff" text-anchor="middle">Idea A</text>
+
+  <!-- Right branch node -->
+  <circle cx="850" cy="400" r="50" fill="#2a2a4a" stroke="#ff6b9d" stroke-width="2.5" filter="url(#pinkGlow)"/>
+  <text x="850" y="405" font-family="'JetBrains Mono', monospace" font-size="12" fill="#e8e8ff" text-anchor="middle">Idea B</text>
+
+  <!-- Left sub-node -->
+  <circle cx="450" cy="550" r="40" fill="#2a2a4a" stroke="#06b6d4" stroke-width="2" filter="url(#glow)"/>
+  <text x="450" y="555" font-family="'JetBrains Mono', monospace" font-size="11" fill="#e8e8ff" text-anchor="middle">Detail 1</text>
+
+  <!-- Right sub-node -->
+  <circle cx="750" cy="550" r="40" fill="#2a2a4a" stroke="#06b6d4" stroke-width="2" filter="url(#glow)"/>
+  <text x="750" y="555" font-family="'JetBrains Mono', monospace" font-size="11" fill="#e8e8ff" text-anchor="middle">Detail 2</text>
+
+  <!-- Conclusion node -->
+  <circle cx="600" cy="650" r="45" fill="#2a2a4a" stroke="#a855f7" stroke-width="2" filter="url(#purpleGlow)"/>
+  <text x="600" y="655" font-family="'JetBrains Mono', monospace" font-size="11" fill="#e8e8ff" text-anchor="middle">Conclusion</text>
+
+  <!-- Main instruction text with background for visibility -->
+  <rect x="250" y="120" width="700" height="80" fill="#1a1a3a" opacity="0.8" rx="10"/>
+  <text x="600" y="150" font-family="'Press Start 2P', monospace" font-size="16" fill="#e8e8ff" text-anchor="middle" font-weight="400">
+    Replace with Your Mental Model
+  </text>
+  <text x="600" y="180" font-family="'JetBrains Mono', monospace" font-size="12" fill="#a8a8d8" text-anchor="middle">
+    Save your image to the images/ folder and update the src in index.html
+  </text>
+</svg>

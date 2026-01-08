@@ -20,7 +20,7 @@ Once you have your own copy, you will see the following file structure:
 
 - **index.html**: The main page of your website. You will edit this file to add your content.
 - **styles.css**: Controls the look and feel (colors, fonts, layout).
-- **images/**: A folder where you must save your mental model image file.
+- **images/**: A folder where you must save your mental model image file. Contains a placeholder image (`sample-mental-model.svg`) that will be replaced with your own.
 - **README.md**: This instruction file.
 
 ## Customization Instructions
@@ -34,8 +34,9 @@ Once you have your own copy, you will see the following file structure:
 
 1. Open `index.html` in VS Code.
 2. **Title & Heading:** Update the `<title>` tag and the main `<h1>` header with the name of your assignment.
-3. **Image Source:** Find the comment `<!-- INSERT IMAGE HERE -->`. Update the `src` attribute of the `<img>` tag to match your filename.
+3. **Image Source:** Find the comment `<!-- INSERT IMAGE HERE -->`. Update the `src` attribute of the `<img>` tag to match your filename (replacing the placeholder).
    - *Example:* `<img src="images/my-diagram.png" alt="Mental Model of Systems">`
+   - Don't forget to also update the `alt` text to describe your image!
 4. **Description:** Update the paragraph text `<p>` to describe your thinking process.
 
 ### 3. Customize the Design (Optional)

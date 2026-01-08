@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- UPDATE THE TITLE BELOW with your assignment name -->
+    <title>My Mental Model - [Your Topic Here]</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- tsParticles for animated star background -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Animated Particle Background -->
+    <div id="tsparticles"></div>
+
+    <!-- Theme Toggle Button -->
+    <nav class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="icon moon-icon">🌙</span>
+            <span class="icon sun-icon">☀️</span>
+        </button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <!-- UPDATE THE HEADING BELOW with your mental model title -->
+            <h1 class="glowing-title">My Mental Model Title</h1>
+        </header>
+
+        <!-- Mental Model Image Section -->
+        <section class="image-section">
+            <!-- INSERT IMAGE HERE -->
+            <!-- Update the src attribute below to match your image filename (e.g., "images/my-diagram.png") -->
+            <!-- Recommended image size: 1200x800 pixels or similar 16:9 aspect ratio -->
+            <img src="images/sample-mental-model.svg" alt="Mental Model Diagram" class="mental-model-image">
+        </section>
+
+        <!-- Description Section -->
+        <section class="description-section">
+            <!-- UPDATE THE PARAGRAPHS BELOW with your thinking process description -->
+            <p>
+                This is where you describe your mental model and explain your thinking process.
+                What does your diagram represent? How did you organize the information?
+                What connections did you discover between different concepts?
+            </p>
+            <p>
+                You can add multiple paragraphs to fully explain your work, or just a concise sentence or two. Use this space to
+                reflect on what you learned and how this mental model helps you understand the topic better.
+                Feel free to discuss your creative choices and any insights you gained while creating this visualization.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Created with the Mental Model Template</p>
+        </footer>
+
+    </main>
+
+    <!-- Particle Animation Script -->
+    <script>
+        // Initialize the animated star background
+        async function initParticles() {
+            await tsParticles.load("tsparticles", {
+                fullScreen: {
+                    enable: false
+                },
+                background: {
+                    color: {
+                        value: "transparent"
+                    }
+                },
+                fpsLimit: 60,
+                interactivity: {
+                    events: {
+                        onHover: {
+                            enable: true,
+                            mode: "grab"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            links: {
+                                opacity: 0.5
+                            }
+                        }
+                    }
+                },
+                particles: {
+                    color: {
+                        value: ["#ffffff", "#a855f7", "#ff6b9d", "#06b6d4"]
+                    },
+                    links: {
+                        color: "#a855f7",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce"
+                        },
+                        random: true,
+                        speed: 0.8,
+                        straight: false
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800
+                        },
+                        value: 80
+                    },
+                    opacity: {
+                        value: { min: 0.1, max: 0.8 },
+                        animation: {
+                            enable: true,
+                            speed: 1,
+                            minimumValue: 0.1
+                        }
+                    },
+                    shape: {
+                        type: ["circle", "star"]
+                    },
+                    size: {
+                        value: { min: 1, max: 4 },
+                        animation: {
+                            enable: true,
+                            speed: 2,
+                            minimumValue: 0.5
+                        }
+                    }
+                },
+                detectRetina: true
+            });
+        }
+
+        // Theme Toggle Functionality
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateParticlesForTheme(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateParticlesForTheme(newTheme);
+        }
+
+        function updateParticlesForTheme(theme) {
+            const container = tsParticles.domItem(0);
+            if (container) {
+                const newColors = theme === 'dark'
+                    ? ["#ffffff", "#a855f7", "#ff6b9d", "#06b6d4"]
+                    : ["#6366f1", "#a855f7", "#ff6b9d", "#06b6d4"];
+
+                container.options.particles.color.value = newColors;
+                container.refresh();
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            initParticles();
+
+            // Set up theme toggle button
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+</html>
