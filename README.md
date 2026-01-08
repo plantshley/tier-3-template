@@ -37,6 +37,9 @@ Once you have your own copy, you will see the following file structure:
 3. **Image Source:** Find the comment `<!-- INSERT IMAGE HERE -->`. Update the `src` attribute of the `<img>` tag to match your filename (replacing the placeholder).
    - *Example:* `<img src="images/my-diagram.png" alt="Mental Model of Systems">`
    - Don't forget to also update the `alt` text to describe your image!
+   - Make sure the file name of your image does NOT contain any spaces:
+       + "my-diagram.png" ✅
+       + "my diagram.png" ❌
 4. **Description:** Update the paragraph text `<p>` to describe your thinking process.
 
 ### 3. Customize the Design (Optional)
@@ -59,7 +62,7 @@ If you are not comfortable writing CSS or just want to explore, you can ask GitH
 
 ### 4. Push: Stage, Commit, and Push your changes
 
-### 5. [Optional] Deploy: See instructions below or [Starmap section](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html)
+### 5. [Optional] Deploy: See instructions below or [Starmap](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html)
 
 ### 6. Submit:
 
@@ -68,7 +71,7 @@ If you are not comfortable writing CSS or just want to explore, you can ask GitH
 
 ## [Optional] Github Pages Deployment (Publishing to the Web)
 
-To make your webpage live. (See [Starmap section](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html))
+To make your webpage live. (See [Starmap](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html))
 
 1. Commit and Push your changes to GitHub.
 2. Go to your repository **Settings** tab.
