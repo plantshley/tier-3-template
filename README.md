@@ -59,7 +59,7 @@ If you are not comfortable writing CSS or just want to explore, you can ask GitH
 
 ### 4. Push: Stage, Commit, and Push your changes
 
-### 5. [Optional] Deploy: See instructions below or [Starmap section](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html)
+### 5. [Optional] Deploy: See instructions below or [Starmap](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html)
 
 ### 6. Submit:
 
@@ -68,7 +68,7 @@ If you are not comfortable writing CSS or just want to explore, you can ask GitH
 
 ## [Optional] Github Pages Deployment (Publishing to the Web)
 
-To make your webpage live. (See [Starmap section](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html))
+To make your webpage live. (See [Starmap](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html))
 
 1. Commit and Push your changes to GitHub.
 2. Go to your repository **Settings** tab.
