@@ -3,13 +3,14 @@
    A cosmic theme for showcasing your work
    ======================================== */
 
-/* ========================================
-   CSS CUSTOM PROPERTIES (VARIABLES)
-   Edit these values to customize colors and fonts!
-   ======================================== */
+/* ============================================
+   🎨 STUDENT CUSTOMIZATION AREA
+   Edit these sections to personalize your page!
+   ============================================ */
 
 /* ----------------------------------------
    DARK THEME (Moonlight) - Default
+   Edit colors below to customize dark mode
    ---------------------------------------- */
 :root,
 [data-theme="dark"] {
@@ -40,7 +41,7 @@
     --radius-md: 12px;
     --radius-lg: 20px;
 
-    /* Theme-specific */
+    /* Theme-specific effects */
     --shadow-glow: rgba(168, 85, 247, 0.4);
     --shadow-glow-secondary: rgba(255, 107, 157, 0.3);
     --border-accent: rgba(168, 85, 247, 0.3);
@@ -48,6 +49,7 @@
 
 /* ----------------------------------------
    LIGHT THEME (Sunshine)
+   Edit colors below to customize light mode
    ---------------------------------------- */
 [data-theme="light"] {
     /* Background Colors */
@@ -58,16 +60,53 @@
     --text-primary: #1a1a3a;         /* Dark text for readability */
     --text-secondary: #4a4a7a;       /* Muted/secondary text */
 
-    /* Accent Colors - slightly adjusted for light mode */
+    /* Accent Colors - adjusted for light mode */
     --accent-pink: #e05585;
     --accent-purple: #8b45d6;
     --accent-cyan: #0598b8;
 
-    /* Theme-specific */
+    /* Theme-specific effects */
     --shadow-glow: rgba(139, 69, 214, 0.3);
     --shadow-glow-secondary: rgba(224, 85, 133, 0.2);
     --border-accent: rgba(139, 69, 214, 0.4);
 }
+
+/* ----------------------------------------
+   OPTIONAL CUSTOMIZATIONS
+   To use these, remove the comment markers around them
+   ---------------------------------------- */
+
+/*
+   Example 1: Add a glow effect when hovering over the description
+
+   .description-section:hover {
+       border-color: rgba(168, 85, 247, 0.6);
+       box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+   }
+*/
+
+/*
+   Example 2: Warm sunset color scheme (paste this inside :root above)
+
+   --bg-primary: #1a0a0a;
+   --bg-secondary: #2a1212;
+   --accent-pink: #ff6b6b;
+   --accent-purple: #f7a855;
+   --accent-cyan: #d406b6;
+*/
+
+/*
+   Example 3: Increase title size
+
+   .glowing-title {
+       font-size: clamp(1.5rem, 5vw, 3rem);
+   }
+*/
+
+/* ============================================
+   ⚙️ CORE STYLES (Advanced users only)
+   The styles below control the page structure
+   ============================================ */
 
 /* ========================================
    BASE STYLES
@@ -229,6 +268,7 @@ body {
 /* ========================================
    IMAGE SECTION
    Your mental model display area
+   Responsive to any image dimensions!
    ======================================== */
 
 .image-section {
@@ -237,22 +277,27 @@ body {
     align-items: center;
     margin: var(--space-lg) 0;
     padding: var(--space-md);
+    width: 100%;
 }
 
 /* The mental model image with glow effect */
 .mental-model-image {
+    /* Responsive sizing - adapts to any image dimensions */
     max-width: 100%;
+    max-height: 80vh;
+    width: auto;
     height: auto;
+
+    /* Display properties */
+    object-fit: contain;
     border-radius: var(--radius-lg);
     box-shadow:
         0 8px 40px var(--shadow-glow),
         0 4px 20px var(--shadow-glow-secondary);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-}
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-/* Light theme adjustments for images */
-[data-theme="light"] .mental-model-image {
-    filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(0.9);
+    /* Ensure image maintains aspect ratio */
+    display: block;
 }
 
 /* Hover effect for the image */
@@ -356,29 +401,3 @@ body {
         font-size: 0.8rem;
     }
 }
-
-/* ========================================
-   OPTIONAL: ADDITIONAL STYLES
-   Uncomment or add your own styles below!
-   ======================================== */
-
-/*
-   Example: Add a subtle glow to the description section on hover
-
-   .description-section:hover {
-       border-color: rgba(168, 85, 247, 0.6);
-       box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
-   }
-*/
-
-/*
-   Example: Different color scheme (warm sunset)
-
-   :root {
-       --bg-primary: #1a0a0a;
-       --bg-secondary: #2a1212;
-       --accent-pink: #ff6b6b;
-       --accent-purple: #f7a855;
-       --accent-cyan: #d406b6;
-   }
-*/
