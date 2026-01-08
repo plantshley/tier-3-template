@@ -37,6 +37,9 @@ Once you have your own copy, you will see the following file structure:
 3. **Image Source:** Find the comment `<!-- INSERT IMAGE HERE -->`. Update the `src` attribute of the `<img>` tag to match your filename (replacing the placeholder).
    - *Example:* `<img src="images/my-diagram.png" alt="Mental Model of Systems">`
    - Don't forget to also update the `alt` text to describe your image!
+   - Make sure the file name of your image does NOT contain any spaces:
+       + "my-diagram.png" ✅
+       + "my diagram.png" ❌
 4. **Description:** Update the paragraph text `<p>` to describe your thinking process.
 
 ### 3. Customize the Design (Optional)
