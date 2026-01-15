@@ -350,6 +350,20 @@ body {
     font-size: 0.9rem;
 }
 
+.footer a {
+    color: var(--accent-purple);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer a:hover {
+    color: var(--accent-pink);
+    text-shadow:
+        0 0 10px var(--shadow-glow),
+        0 0 20px var(--shadow-glow-secondary);
+}
+
 /* ========================================
    RESPONSIVE DESIGN
    Adjustments for smaller screens
