@@ -176,6 +176,12 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.theme-toggle .icon img {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
 /* Dark theme: show moon, hide sun */
 [data-theme="dark"] .moon-icon {
     opacity: 1;
