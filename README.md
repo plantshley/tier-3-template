@@ -1,6 +1,6 @@
 # Mental Model Webpage Template
 
-This repository serves as a starter template for the **Tier 3: Incorporate into Template** output option. It provides a basic HTML/CSS structure that allows you to display your mental model image and description on a live webpage without starting from scratch.
+This repository serves as a starter template for the **Tier 3: Incorporate into Template** output option described at the [Making Thinking Visual Repo](https://github.com/plantshley/making-thinking-visual.git). It provides a basic HTML/CSS structure that allows you to display your mental model image and description on a live webpage without starting from scratch.
 
 ## How to Use This Template
 
@@ -62,7 +62,7 @@ If you are not comfortable writing CSS or just want to explore, you can ask GitH
 
 ### 4. Push: Stage, Commit, and Push your changes
 
-### 5. [Optional] Deploy: See instructions below or [Starmap](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html)
+### 5. [Optional] Deploy: See instructions below or [Setting up GitHub Starmap](https://plantshley.github.io/making-thinking-visual/pages/github-pages.html)
 
 ### 6. Submit:
 
